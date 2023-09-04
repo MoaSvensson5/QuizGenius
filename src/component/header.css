@@ -1,0 +1,12 @@
+.header {
+    padding:1rem 0 1rem 0;
+    color:white;
+    background-color: rgba(0, 89, 255, 0.604);
+}
+  
+.header-title {
+    text-align: center;
+    font-family: var(--body-font);
+    font-weight: var(--font-bold);
+    font-size: 3rem;
+}

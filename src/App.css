@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,500&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --body-font:"Montserrat";
+  --font-regular:300;
+  --font-medium:400;
+  --font-bold:500;
+}
+
+* {
+  margin: 0;
+  padding:0;
+}
+
+body {
+  margin:1rem;
+}

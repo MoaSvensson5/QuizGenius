@@ -1,0 +1,72 @@
+.text {
+    font-family: var(--body-font);
+    padding:1rem 0;
+    text-align: center;
+}
+  
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    margin: 0 auto;
+}
+  
+.welcome-title {
+    font-weight: var(--font-bold);
+    font-size: 2rem;
+}
+  
+.welcome-text b {
+    color:rgba(0, 89, 255, 0.604);
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+  
+.buttons-categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; 
+    flex-wrap: wrap;
+}
+  
+.button-category {
+    width: calc(50% - 10px);
+    margin: 10px;
+    width:300px;
+    height:200px;
+    font-family: var(--body-font);
+    font-weight: var(--font-medium);
+    font-size: 1rem;
+}
+  
+.general-knowledge {
+    background-color: rgb(255, 136, 53);
+    border:2px solid rgb(210, 70, 0);
+}
+  
+.celebrities {
+    background-color: rgb(50, 172, 50);
+    border:2px solid rgb(0, 105, 0);
+}
+  
+.movies {
+    background-color: rgb(36, 123, 229);
+    border:2px solid rgb(9, 74, 153);
+}
+  
+.math {
+    background-color: rgb(134, 77, 169);
+    border:2px solid rgb(65, 32, 85);
+}
+  
+.general-knowledge:hover, 
+.celebrities:hover,
+.movies:hover,
+.math:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
