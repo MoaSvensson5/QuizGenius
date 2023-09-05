@@ -1,14 +1,20 @@
-/*export function QuestionView (){
+import React, { useState, useEffect } from 'react';
+import { GetQuestions} from "../api/api";
+
+export function RenderQuestions ({category}) {
+    const [questions, setQuestions] = useState([])
+
+    
 
     useEffect (() => {
-        if (category.category !== null) {
-            GetQuestions(category).then((response) => {
-                setQuestions(response.results)
-            })
-        }
-    }, [category.category]);
+        GetQuestions(category).then ((response) => {
+            setQuestions(response.results);
+        })
+    }, [category]);
 
-    return (
-        <div>Question</div>
+    console.log(questions);
+    return(
+        <div className="question-page">
+        </div>
     )
-}*/
+}
