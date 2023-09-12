@@ -1,0 +1,30 @@
+.question-title {
+    text-align: center;
+    font-size: 2rem;
+    padding:2rem 0;
+    font-family: var(--body-font);
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answers-container {
+    text-align: center;
+    padding:2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+    width:max-content;
+}
+
+.answers-buttons {
+    min-width:200px;
+}
+
+.time-container {
+    text-align: center;
+}

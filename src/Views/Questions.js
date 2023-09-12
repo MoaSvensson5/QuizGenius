@@ -1,3 +1,4 @@
+import "./questions.css";
 import { useState, useEffect } from 'react';
 import { Button, shuffleArray } from '../constants/constants';
 import { useRecoilState } from "recoil";
@@ -9,7 +10,7 @@ export function RenderQuestions () {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
     const [correctAnswers, setcorrectAnswers] = useState([]);
-    const [timeRemaining, setTimeRemaining] = useState(5);
+    const [timeRemaining, setTimeRemaining] = useState(100);
 
     const [category, setCategory] = useRecoilState(categoryState);
 
@@ -54,7 +55,7 @@ export function RenderQuestions () {
 
     const handleNextQuestion = (selectedAnswer, questionIndex) => {
 
-        setTimeRemaining(5);
+        setTimeRemaining(100);
 
         if (currentQuestionIndex < questions.length - 1) {
             if (selectedAnswer === currentQuestion.correct_answer) {
@@ -71,7 +72,6 @@ export function RenderQuestions () {
 
     return(
         <div>
-            <div className="question-page">
                 {currentQuestion ? (
                     quizCompleted ? (
                         <Navigate to="/result"/>
@@ -81,22 +81,24 @@ export function RenderQuestions () {
                             <div className="question-title">Question {currentQuestionIndex + 1}/12</div>
                             <div className="text">{currentQuestion.question}</div>
                         </div>
-                        <div>
-                            {currentQuestion.shuffledAnswers.map((answer, questionIndex) => (
-                                <Button
-                                    key={questionIndex}
-                                    onClick={() => handleNextQuestion(answer, questionIndex)}
-                                    title={answer}
-                                />
-                            ))}
+                        <div className="container">
+                            <div className="answers-container">
+                                {currentQuestion.shuffledAnswers.map((answer, questionIndex) => (
+                                    <Button
+                                        className="answers-buttons"
+                                        key={questionIndex}
+                                        onClick={() => handleNextQuestion(answer, questionIndex)}
+                                        title={answer}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                        <div>{timeRemaining}</div>
+                        <div className="time-container">{timeRemaining}</div>
                     </div>
                     )
                 ) : (
                     <div>Loading...</div>
                 )}
-            </div>
         </div>
     )
 }
