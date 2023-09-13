@@ -22,9 +22,53 @@
 }
 
 .answers-buttons {
-    min-width:200px;
+    margin: 10px;
+    width:300px;
+    height:200px;
+    font-size: 1.2rem;
+}
+
+.answers-buttons:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.category-general-knowledge {
+    background-color: rgb(255, 136, 53);
+    border:2px solid rgb(210, 70, 0);
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.category-celebrities {
+    background-color: rgb(50, 172, 50);
+    border:2px solid rgb(0, 105, 0);
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.category-movies {
+    background-color: rgb(36, 123, 229);
+    border:2px solid rgb(9, 74, 153);
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.category-math {
+    background-color: rgb(134, 77, 169);
+    border:2px solid rgb(65, 32, 85);
+    padding-left:5px;
+    padding-right:5px;
 }
 
 .time-container {
     text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+    .answers-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
