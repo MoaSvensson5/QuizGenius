@@ -13,7 +13,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<StartView />} />
+          <Route index element={<StartView />} />
+          <Route path="/home" element={<StartView />} />
           <Route path="/questions" element={<RenderQuestions />} />
           <Route path="/result" element={<ShowResult />} />
         </Routes>

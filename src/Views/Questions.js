@@ -15,6 +15,8 @@ export function RenderQuestions () {
     const category = useRecoilValue(categoryState);
     const categoryClass = getCategoryClass(category);
 
+    console.log(correctAnswers);
+
     useEffect(() => {
 
             fetch(`https://opentdb.com/api.php?amount=12&category=${category}&type=multiple`)
@@ -30,6 +32,7 @@ export function RenderQuestions () {
                         
                     });
                     setQuestions(shuffledQuestions);
+                    setcorrectAnswers([]);
                 });
     }, [category]);
 
@@ -85,7 +88,7 @@ export function RenderQuestions () {
                                 <Button
                                     className={`answers-buttons text ${categoryClass}`}
                                     key={questionIndex}
-                                    onClick={() => handleNextQuestion(answer, questionIndex)}
+                                    onClick={() => handleNextQuestion(answer, currentQuestionIndex)}
                                     title={answer}
                                 />
                             ))}
