@@ -19,7 +19,8 @@ export function ShowResult (){
                     </li>
                 ))}
             </ol>
-            <Link to="/home">*</Link>
+            <Link to="/home" className="back-button text"><i className="arrow-left"></i>Back to Start</Link>
+            <Link to="/scoreboard" className="back-button text"><i className="arrow-left"></i>scoreboard</Link>
         </div>
     );
 }

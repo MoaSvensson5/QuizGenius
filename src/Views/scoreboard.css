@@ -1,0 +1,16 @@
+.score-board {
+   display: flex;
+   flex-direction: column;
+}
+
+.score-board table, th, td {
+    border: 1px solid;
+}
+
+.score-board table {
+    border-collapse: collapse;
+}
+
+.score-board tr:nth-child(even) {
+    background-color:rgba(0, 89, 255, 0.178);
+}

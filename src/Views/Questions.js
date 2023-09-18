@@ -1,9 +1,10 @@
 import "./questions.css";
 import { useState, useEffect } from 'react';
-import { Button, shuffleArray, getCategoryClass } from '../constants/constants';
+import { Button, shuffleArray, getCategoryClass, User } from '../constants/constants';
 import { useRecoilState, useRecoilValue } from "recoil";
-import { categoryState, questionsState, correctAnswersState } from "../states/states";
+import { categoryState, questionsState, correctAnswersState, usernameState, usersState } from "../states/states";
 import { Navigate } from 'react-router-dom';
+import { saveUsers } from "../storage/user";
 
 export function RenderQuestions () {
     const [questions, setQuestions] = useRecoilState(questionsState);
@@ -14,8 +15,9 @@ export function RenderQuestions () {
 
     const category = useRecoilValue(categoryState);
     const categoryClass = getCategoryClass(category);
+    const username = useRecoilValue(usernameState);
 
-    console.log(correctAnswers);
+    const [users, setUsers] = useRecoilState(usersState);
 
     useEffect(() => {
 
@@ -70,6 +72,18 @@ export function RenderQuestions () {
             setQuizCompleted(true);
         }
     };
+
+    useEffect(() => {
+        if (quizCompleted) {
+            let score = correctAnswers.length;
+            let value = [...users, new User(username, score)];
+            saveUsers(value);
+            setUsers(value);
+            console.log(value);
+        }
+    }, [quizCompleted, correctAnswers, username]);
+
+    
 
     return(
         <div>

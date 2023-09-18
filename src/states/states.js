@@ -14,3 +14,13 @@ export const correctAnswersState = atom ({
     key: "correctAnswers",
     default:[],
 });
+
+export const usernameState = atom({
+    key: "username",
+    default: [],
+});
+
+export const usersState = atom({
+    key: "users",
+    default: [],
+});
