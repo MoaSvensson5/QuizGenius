@@ -4,7 +4,7 @@ import { Button, shuffleArray, getCategoryClass, User } from '../constants/const
 import { useRecoilState, useRecoilValue } from "recoil";
 import { categoryState, questionsState, correctAnswersState, usernameState, usersState } from "../states/states";
 import { Navigate } from 'react-router-dom';
-import { saveUsers } from "../storage/user";
+import { saveUsers, loadUsers } from "../storage/user";
 
 export function RenderQuestions () {
     const [questions, setQuestions] = useRecoilState(questionsState);
@@ -79,7 +79,6 @@ export function RenderQuestions () {
             let value = [...users, new User(username, score)];
             saveUsers(value);
             setUsers(value);
-            console.log(value);
         }
     }, [quizCompleted, correctAnswers, username]);
 

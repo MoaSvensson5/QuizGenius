@@ -7,8 +7,8 @@ import { usernameState} from "../states/states";
 export function StartView (){
 
     const [category, setCategory] = useRecoilState(categoryState);
-    
     const [username, setUsername] = useRecoilState(usernameState);
+
     setUsername("");
     
     return (
@@ -19,11 +19,11 @@ export function StartView (){
             <p className="welcome-text text">Sharpen you wits, trust you instincts, and dive into the excitement. Can you make the right call under the pressure of time? Are you the quiz master you've always believed yourself to be? It's time to find out!</p>
             <p className="welcome-text text">Get ready to embark on this exciting journey of knowledge, speed, and discovery. <b>Let the quiz begin!</b></p>
             <div className="buttons-categories">
-                <Link to="/setupuser" className="button-category general-knowledge" onClick={() => setCategory('9')}>General Knowledge</Link>
-                <Link to="/setupuser" className="button-category celebrities" onClick={() => setCategory('26')}>Celebrities</Link>
+                <Link to="/registerusername" className="button-category general-knowledge" onClick={() => setCategory('9')}>General Knowledge</Link>
+                <Link to="/registerusername" className="button-category celebrities" onClick={() => setCategory('26')}>Celebrities</Link>
                 <br></br>
-                <Link to="/setupuser" className="button-category movies" onClick={() => setCategory('11')}>Movies</Link>
-                <Link to="/setupuser" className="button-category math" onClick={() => setCategory('19')}>Math</Link>
+                <Link to="/registerusername" className="button-category movies" onClick={() => setCategory('11')}>Movies</Link>
+                <Link to="/registerusername" className="button-category math" onClick={() => setCategory('19')}>Math</Link>
             </div>
         </div>
     )
