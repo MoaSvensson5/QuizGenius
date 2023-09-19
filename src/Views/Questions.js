@@ -4,14 +4,14 @@ import { Button, shuffleArray, getCategoryClass, User } from '../constants/const
 import { useRecoilState, useRecoilValue } from "recoil";
 import { categoryState, questionsState, correctAnswersState, usernameState, usersState } from "../states/states";
 import { Navigate } from 'react-router-dom';
-import { saveUsers, loadUsers } from "../storage/user";
+import { saveUsers } from "../storage/user";
 
 export function RenderQuestions () {
     const [questions, setQuestions] = useRecoilState(questionsState);
     const [correctAnswers, setcorrectAnswers] = useRecoilState(correctAnswersState);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
-    const [timeRemaining, setTimeRemaining] = useState(100);
+    const [timeRemaining, setTimeRemaining] = useState(15);
 
     const category = useRecoilValue(categoryState);
     const categoryClass = getCategoryClass(category);
@@ -58,7 +58,7 @@ export function RenderQuestions () {
 
     const handleNextQuestion = (selectedAnswer, questionIndex) => {
 
-        setTimeRemaining(100);
+        setTimeRemaining(15);
 
         if (currentQuestionIndex < questions.length - 1) {
             if (selectedAnswer === currentQuestion.correct_answer) {
@@ -93,7 +93,7 @@ export function RenderQuestions () {
                 <div>
                     <div>
                         <div className="question-title">Question {currentQuestionIndex + 1}/12</div>
-                        <div className="question text">{currentQuestion.question}</div>
+                        <div className="question text">{currentQuestion.question.replace(/&quot;/g, "'").replace(/&ouml;/g, "ö").replace(/&#039;/g, "´").replace(/&oacute;/g,"ó").replace(/&iacute;/g,"í").replace(/&aacute;/g,"á").replace(/&amp;/g,"&").replace(/&prime;/g,"'").replace(/&Prime;/g,"'").replace(/&pi;/g,"π")}</div>
                     </div>
                     <div className="container">
                         <div className="answers-container">
@@ -102,16 +102,16 @@ export function RenderQuestions () {
                                     className={`answers-buttons text ${categoryClass}`}
                                     key={questionIndex}
                                     onClick={() => handleNextQuestion(answer, currentQuestionIndex)}
-                                    title={answer}
+                                    title={answer.replace(/&quot;/g, "'").replace(/&ouml;/g, "ö").replace(/&#039;/g, "´").replace(/&oacute;/g,"ó").replace(/&iacute;/g,"í").replace(/&aacute;/g,"á").replace(/&amp;/g,"&").replace(/&prime;/g,"'").replace(/&Prime;/g,"'").replace(/&pi;/g,"π")}
                                 />
                             ))}
                         </div>
                     </div>
-                    <div className="time-container">{timeRemaining}</div>
+                    <div className="text time-container">{timeRemaining}</div>
                 </div>
                 )
             ) : (
-                <div>Loading...</div>
+                <div className="text loading">Loading...</div>
             )}
     </div>
     )

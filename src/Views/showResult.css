@@ -99,4 +99,19 @@
     padding: 3px;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    margin-left:2rem;
+}
+
+.arrow-right {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    margin-right:2rem;
+}
+.links {
+    display: flex;
+    justify-content: space-between;
 }

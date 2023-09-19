@@ -1,4 +1,5 @@
 import "./home.css";
+import { Footer } from '../component/footer';
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { categoryState } from "../states/states";
@@ -25,6 +26,7 @@ export function StartView (){
                 <Link to="/registerusername" className="button-category movies" onClick={() => setCategory('11')}>Movies</Link>
                 <Link to="/registerusername" className="button-category math" onClick={() => setCategory('19')}>Math</Link>
             </div>
+            <Footer />
         </div>
     )
 }

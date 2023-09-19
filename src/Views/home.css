@@ -50,21 +50,25 @@
 .general-knowledge {
     background-color: rgb(255, 136, 53);
     border:2px solid rgb(210, 70, 0);
+    border-radius: 1rem;
 }
   
 .celebrities {
     background-color: rgb(50, 172, 50);
     border:2px solid rgb(0, 105, 0);
+    border-radius: 1rem;
 }
   
 .movies {
     background-color: rgb(36, 123, 229);
     border:2px solid rgb(9, 74, 153);
+    border-radius: 1rem;
 }
   
 .math {
     background-color: rgb(134, 77, 169);
     border:2px solid rgb(65, 32, 85);
+    border-radius: 1rem;
 }
   
 .general-knowledge:hover, 

@@ -1,8 +1,8 @@
 import "./registerUsername.css";
+import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { usernameState, usersState } from "../states/states";
 import { useNavigate } from "react-router-dom";
-import "./questions.css";
 import { useState, useEffect } from 'react';
 import { loadUsers } from "../storage/user";
 
@@ -14,6 +14,7 @@ export function RegisterUsername () {
   const navigate = useNavigate();
 
   const [message, setMessage] = useState("");
+  const [messageAnimate, setMessageAnimate] = useState(false);
 
   useEffect(() => {
     setUsers(loadUsers);
@@ -25,21 +26,26 @@ export function RegisterUsername () {
 
     let existing = users.find(all => all.username === username);
     if (existing !== undefined) {
-      setMessage("");
+      setMessageAnimate(!messageAnimate);
       setMessage("That username is taken");
     } else if (username === "") {
-      setMessage("");
+      setMessageAnimate(!messageAnimate);
       setMessage("Please enter a username")
     } else {
       navigate("/questions");
     }
   };
-
+  
   return (
     <>
-      <div className="content username-form text">
-        <form className="">
-          <label>Enter your username : </label>
+      <span className="links">
+        <Link to="/home" className="text back-button">
+          <i className="arrow-left"></i>Back to Start
+        </Link>
+      </span>
+      <div className="text container">
+        <form className="username-form ">
+          <label className="title">Enter your username : </label>
           <input
             className="input-field" 
             value ={username}
@@ -50,10 +56,12 @@ export function RegisterUsername () {
           <div className="button-container">
             <button 
             onClick={register}
-            className="text"
+            className="text start-button"
             >Start Quiz</button>
           </div>
-          {message}
+          <div className={`message-content ${messageAnimate ? "message-animation" : ""}`}>
+            {message}
+          </div>
         </form>
       </div>
     </>

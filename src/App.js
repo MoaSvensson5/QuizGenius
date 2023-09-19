@@ -4,7 +4,6 @@ import { StartView } from "./Views/Home";
 import { RenderQuestions } from "./Views/Questions";
 import { ShowResult } from "./Views/ShowResult";
 import { Header } from './component/header';
-import { Footer } from './component/footer';
 import { ScoreBoard } from './Views/ScoreBoard';
 import { RegisterUsername } from './Views/RegisterUsername';
 import { Scoreboard } from './Views/ScoreBoard';
@@ -24,7 +23,6 @@ function App() {
           <Route path="/registerusername" element={<RegisterUsername/>}/>
         </Routes>
       </BrowserRouter>
-      <Footer />
     </>
   );
 

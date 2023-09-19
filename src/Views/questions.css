@@ -39,6 +39,7 @@
     border:2px solid rgb(210, 70, 0);
     padding-left:5px;
     padding-right:5px;
+    border-radius: 1rem;
 }
 
 .category-celebrities {
@@ -46,6 +47,7 @@
     border:2px solid rgb(0, 105, 0);
     padding-left:5px;
     padding-right:5px;
+    border-radius: 1rem;
 }
 
 .category-movies {
@@ -53,6 +55,7 @@
     border:2px solid rgb(9, 74, 153);
     padding-left:5px;
     padding-right:5px;
+    border-radius: 1rem;
 }
 
 .category-math {
@@ -60,10 +63,18 @@
     border:2px solid rgb(65, 32, 85);
     padding-left:5px;
     padding-right:5px;
+    border-radius: 1rem;
 }
 
 .time-container {
     text-align: center;
+    font-size:2rem;
+}
+
+.loading {
+    text-align: center;
+    font: 3rem;
+    padding-top:3rem;
 }
 
 @media only screen and (max-width: 700px) {
