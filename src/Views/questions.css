@@ -1,85 +1,85 @@
 .question-title {
-    text-align: center;
-    font-size: 2rem;
-    padding:2rem 0;
-    font-family: var(--body-font);
-    font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+  padding:2rem 0;
+  font-family: var(--body-font);
+  font-weight: bold;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .answers-container {
-    text-align: center;
-    padding:2rem 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:10px;
-    width:max-content;
+  text-align: center;
+  padding:2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:10px;
+  width:max-content;
 }
 
-.answers-buttons {
-    margin: 10px;
-    width:300px;
-    height:200px;
-    font-size: 1.2rem;
+.answers-button {
+  margin: 10px;
+  width:300px;
+  height:200px;
+  font-size: 1.2rem;
 }
 
-.answers-buttons:hover {
-    opacity: 0.7;
-    transition: 0.3s;
-    cursor: pointer;
+.answers-button:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .category-general-knowledge {
-    background-color: rgb(255, 136, 53);
-    border:2px solid rgb(210, 70, 0);
-    padding-left:5px;
-    padding-right:5px;
-    border-radius: 1rem;
+  background-color: rgb(255, 136, 53);
+  border:2px solid rgb(210, 70, 0);
+  padding-left:5px;
+  padding-right:5px;
+  border-radius: 1rem;
 }
 
 .category-celebrities {
-    background-color: rgb(50, 172, 50);
-    border:2px solid rgb(0, 105, 0);
-    padding-left:5px;
-    padding-right:5px;
-    border-radius: 1rem;
+  background-color: rgb(50, 172, 50);
+  border:2px solid rgb(0, 105, 0);
+  padding-left:5px;
+  padding-right:5px;
+  border-radius: 1rem;
 }
 
 .category-movies {
-    background-color: rgb(36, 123, 229);
-    border:2px solid rgb(9, 74, 153);
-    padding-left:5px;
-    padding-right:5px;
-    border-radius: 1rem;
+  background-color: rgb(36, 123, 229);
+  border:2px solid rgb(9, 74, 153);
+  padding-left:5px;
+  padding-right:5px;
+  border-radius: 1rem;
 }
 
 .category-math {
-    background-color: rgb(134, 77, 169);
-    border:2px solid rgb(65, 32, 85);
-    padding-left:5px;
-    padding-right:5px;
-    border-radius: 1rem;
+  background-color: rgb(134, 77, 169);
+  border:2px solid rgb(65, 32, 85);
+  padding-left:5px;
+  padding-right:5px;
+  border-radius: 1rem;
 }
 
-.time-container {
-    text-align: center;
-    font-size:2rem;
+.time-remaining {
+  text-align: center;
+  font-size:2rem;
 }
 
-.loading {
-    text-align: center;
-    font: 3rem;
-    padding-top:3rem;
+.loading-text {
+  text-align: center;
+  font: 3rem;
+  padding-top:3rem;
 }
 
 @media only screen and (max-width: 700px) {
-    .answers-container {
-        display: flex;
-        flex-direction: column;
-    }
+  .answers-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

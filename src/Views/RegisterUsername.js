@@ -1,20 +1,19 @@
 import "./registerUsername.css";
-import { Link } from "react-router-dom";
+import "./common.css";
+import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { usernameState, usersState } from "../states/states";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { loadUsers } from "../storage/user";
+import { Button } from '../constants/constants';
 
 export function RegisterUsername () {
 
   const [username, setUsername] = useRecoilState(usernameState);
   const [users, setUsers] = useRecoilState(usersState);
-
-  const navigate = useNavigate();
-
   const [message, setMessage] = useState("");
   const [messageAnimate, setMessageAnimate] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setUsers(loadUsers);
@@ -22,7 +21,7 @@ export function RegisterUsername () {
 
   const register = (event) => {
 
-    event.preventDefault(); // Förhindra att formuläret skickas automatiskt
+    event.preventDefault();
 
     let existing = users.find(all => all.username === username);
     if (existing !== undefined) {
@@ -38,28 +37,29 @@ export function RegisterUsername () {
   
   return (
     <>
-      <span className="links">
-        <Link to="/home" className="text back-button">
-          <i className="arrow-left"></i>Back to Start
+      <span className="navigation-links">
+        <Link to="/home" className="text-style back-link">
+          <i className="arrow-left-icon"></i>Back to Start
         </Link>
       </span>
-      <div className="text container">
+      <div className="text-style username-container">
         <form className="username-form ">
-          <label className="title">Enter your username : </label>
+          <label className="form-title">Enter your username : </label>
           <input
-            className="input-field" 
+            className="username-input-field" 
             value ={username}
             onChange={(event) => setUsername(event.target.value)}
             maxLength={10}
             placeholder="max 10 characters"
           />
           <div className="button-container">
-            <button 
+            <Button 
             onClick={register}
-            className="text start-button"
-            >Start Quiz</button>
+            className={"text-style start-quiz-button"}
+            title={'Start Quiz'}
+            />
           </div>
-          <div className={`message-content ${messageAnimate ? "message-animation" : ""}`}>
+          <div className={`message-content ${messageAnimate ? "message-animation-true" : "message-animation-false"}`}>
             {message}
           </div>
         </form>
