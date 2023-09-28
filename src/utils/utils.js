@@ -1,6 +1,8 @@
 export const Button = ({ onClick, title, className }) => (
   <div>
-    <button className={className} onClick={onClick}>{title}</button>
+    <button className={className} onClick={onClick}>
+      {title}
+    </button>
   </div>
 );
 
@@ -16,17 +18,17 @@ export const shuffleArray = (array) => {
 };
 
 export function getCategoryClass(category) {
-  switch (category){
-    case '9':
-      return 'category-general-knowledge';
-    case '26':
-      return 'category-celebrities';
-    case '11':
-      return 'category-movies';
-    case '19':
-      return 'category-math';
+  switch (category) {
+    case "9":
+      return "category-general-knowledge";
+    case "26":
+      return "category-celebrities";
+    case "11":
+      return "category-movies";
+    case "19":
+      return "category-math";
     default:
-      return'';
+      return "";
   }
 }
 
@@ -35,4 +37,11 @@ export class User {
     this.username = username;
     this.score = score;
   }
+}
+
+export function ConvertHtmlToText(string) {
+  const parser = new DOMParser();
+  const doc1 = parser.parseFromString(string, "text/html");
+  const doc2 = doc1.documentElement.textContent;
+  return doc2;
 }
