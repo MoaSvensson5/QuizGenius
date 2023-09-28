@@ -1,21 +1,17 @@
 .footer {
-    background-color: rgba(0, 89, 255, 0.604);
-    margin-top:1rem;
-    display: flex;
-    justify-content: center;
-    width:100vw;
+  background-color: rgba(0, 89, 255, 0.604);
+  margin-top:1rem;
+  display: flex;
+  justify-content: center;
+  width:100vw;
 }
-  
-.social {
-    padding-bottom: 20px;
-}
-  
+
 .fa {
-    color:white;
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 
+  color:white;
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 
 }
