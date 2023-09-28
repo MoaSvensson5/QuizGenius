@@ -16,7 +16,6 @@ export const shuffleArray = (array) => {
 };
 
 export function getCategoryClass(category) {
-
   switch (category){
     case '9':
       return 'category-general-knowledge';
