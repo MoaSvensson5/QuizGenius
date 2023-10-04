@@ -1,14 +1,14 @@
 import "./scoreboard.css";
 import "./common.css";
 import { usersState, usernameState } from "../states/states";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 export function Scoreboard() {
 
   const username = useRecoilValue(usernameState);
-  const [users, setUsers] = useRecoilState(usersState);
+  const users= useRecoilValue(usersState);
   const [usernameExists, setUsernameExists] = useState(false);
     
   const sortArray = () => {
